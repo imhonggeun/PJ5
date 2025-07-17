@@ -37,5 +37,10 @@ public class ExController {
 	public String exinput(HttpServletRequest req) {
 		return exService.exinput(req);
 	}
+	
+	@GetMapping("/accept")
+	public String accept(HttpServletRequest req) {
+		return exService.accept(req);
+	}
 
 }

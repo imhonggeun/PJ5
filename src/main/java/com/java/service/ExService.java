@@ -14,4 +14,6 @@ public interface ExService {
 
 	String exinput(HttpServletRequest req);
 
+	String accept(HttpServletRequest req);
+
 }

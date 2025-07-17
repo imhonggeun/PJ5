@@ -19,10 +19,16 @@ public class ExServiceImp implements ExService{
 	
 		@Override
 		public String exlist(Model model, HttpServletRequest req) {
-		String title = req.getParameter("title");
-		List<ExDTO> exDTO = exDao.exlist(title);
-		model.addAttribute("result",exDTO);
-		return "exlist";
+			String accept = req.getParameter("accept");			
+			if(accept == null || accept == "") accept ="2";
+			List<ExDTO> exDTO = exDao.exlist(accept);
+			model.addAttribute("result",exDTO);
+			return "exlist";
+			/*
+			 * String title = req.getParameter("accept"); List<ExDTO> exDTO =
+			 * exDao.exlist(title); model.addAttribute("result",exDTO);
+			 */
+		
 	}
 
 		@Override
@@ -49,6 +55,15 @@ public class ExServiceImp implements ExService{
 			String content = req.getParameter("content");
 			ExDTO exDTO = ExDTO.builder().title(title).content(content).build();
 			exDao.exinput(exDTO);
+			return "redirect:/";
+		}
+
+		@Override
+		public String accept(HttpServletRequest req) {
+			int no = Integer.parseInt(req.getParameter("no"));
+			boolean accept = (req.getParameter("accept").equals("0")) ? true : false;
+			ExDTO exDTO = ExDTO.builder().no(no).accept(accept).build();
+			exDao.accept(exDTO);
 			return "redirect:/";
 		}
 		

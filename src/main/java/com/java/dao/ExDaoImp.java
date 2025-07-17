@@ -16,8 +16,8 @@ public class ExDaoImp implements ExDao{
 		private final ExMapper exMapper;
 		
 		@Override
-		public List<ExDTO> exlist(String title) {
-			return exMapper.exlist(title);
+		public List<ExDTO> exlist(String accept) {
+			return exMapper.exlist(accept);
 	}
 
 		@Override
@@ -33,6 +33,11 @@ public class ExDaoImp implements ExDao{
 		@Override
 		public int exinput(ExDTO exDTO) {
 			return exMapper.exinput(exDTO);
+		}
+
+		@Override
+		public int accept(ExDTO exDTO) {
+			return exMapper.accept(exDTO);
 		}
 
 }
