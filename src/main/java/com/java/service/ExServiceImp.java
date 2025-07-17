@@ -30,8 +30,18 @@ public class ExServiceImp implements ExService{
 			int no = Integer.parseInt(req.getParameter("no"));
 			ExDTO exDTO = exDao.exdetail(no);
 			model.addAttribute("result", exDTO);
-			
 			return "exdetail";
 		}
+
+		@Override
+		public String edit(HttpServletRequest req) {
+			int no = Integer.parseInt(req.getParameter("no"));
+			String title = req.getParameter("title");
+			String content = req.getParameter("content");
+			ExDTO exDTO = ExDTO.builder().no(no).title(title).content(content).build();
+			exDao.edit(exDTO);
+			return "redirect:/";
+		}
+		
 
 }

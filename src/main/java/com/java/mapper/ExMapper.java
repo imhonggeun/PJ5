@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import com.java.dto.ExDTO;
 
@@ -15,5 +16,8 @@ public interface ExMapper {
 
 	@Select("select * from test where no=#{no}")
 	ExDTO exdetail(int no);
+	
+	@Update("UPDATE test SET title=#{title},content=#{content} where NO=#{no}")
+	int edit(ExDTO exDTO);
 
 }

@@ -10,4 +10,6 @@ public interface ExDao {
 
 	public ExDTO exdetail(int no);
 
+	public int edit(ExDTO exDTO);
+
 }

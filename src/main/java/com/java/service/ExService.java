@@ -10,4 +10,6 @@ public interface ExService {
 
 	String exdetail(Model model,HttpServletRequest req);
 
+	String edit(HttpServletRequest req);
+
 }

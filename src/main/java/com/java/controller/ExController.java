@@ -3,6 +3,7 @@ package com.java.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import com.java.service.ExService;
 
@@ -22,6 +23,11 @@ public class ExController {
 	@GetMapping("/exdetail")
 	public String exdetail(Model model,HttpServletRequest req) {
 		return exService.exdetail(model,req);
+	}
+	
+	@PostMapping("/edit")
+	public String exdetail(HttpServletRequest req) {
+		return exService.edit(req);
 	}
 
 }
