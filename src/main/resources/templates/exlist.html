@@ -23,7 +23,7 @@
         	<th:block th:each="row : ${result}">
             	<a class="list-group-item m-1 display-6" 
             	   th:classappend="${row.accept} ? 'list-group-item-success':'list-group-item-warning'" 
-            	   th:href="@{/detail(no=${row.no})}" 
+            	   th:href="@{/exdetail(no=${row.no})}" 
             	   th:text="${row.title}"></a>
             </th:block>
         </div>

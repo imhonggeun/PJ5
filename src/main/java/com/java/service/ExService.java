@@ -8,4 +8,6 @@ public interface ExService {
 
 	String exlist(Model model, HttpServletRequest req);
 
+	String exdetail(Model model,HttpServletRequest req);
+
 }

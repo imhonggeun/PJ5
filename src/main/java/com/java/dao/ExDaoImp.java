@@ -17,7 +17,12 @@ public class ExDaoImp implements ExDao{
 		
 		@Override
 		public List<ExDTO> exlist(String title) {
-		return exMapper.exlist(title);
+			return exMapper.exlist(title);
 	}
+
+		@Override
+		public ExDTO exdetail(int no) {
+			return exMapper.exdetail(no);
+		}
 
 }

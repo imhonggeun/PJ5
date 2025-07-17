@@ -13,4 +13,7 @@ public interface ExMapper {
 	@Select("select * from test")
 	List<ExDTO> exlist(String title);
 
+	@Select("select * from test where no=#{no}")
+	ExDTO exdetail(int no);
+
 }

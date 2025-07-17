@@ -18,5 +18,10 @@ public class ExController {
 	public String exlist(Model model,HttpServletRequest req) {
 		return exService.exlist(model,req);
 	}
+	
+	@GetMapping("/exdetail")
+	public String exdetail(Model model,HttpServletRequest req) {
+		return exService.exdetail(model,req);
+	}
 
 }

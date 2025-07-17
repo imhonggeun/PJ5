@@ -25,4 +25,13 @@ public class ExServiceImp implements ExService{
 		return "exlist";
 	}
 
+		@Override
+		public String exdetail(Model model,HttpServletRequest req) {
+			int no = Integer.parseInt(req.getParameter("no"));
+			ExDTO exDTO = exDao.exdetail(no);
+			model.addAttribute("result", exDTO);
+			
+			return "exdetail";
+		}
+
 }

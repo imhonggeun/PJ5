@@ -6,6 +6,8 @@ import com.java.dto.ExDTO;
 
 public interface ExDao {
 
-	List<ExDTO> exlist(String title);
+	public List<ExDTO> exlist(String title);
+
+	public ExDTO exdetail(int no);
 
 }
