@@ -12,4 +12,6 @@ public interface ExDao {
 
 	public int edit(ExDTO exDTO);
 
+	public int exinput(ExDTO exDTO);
+
 }

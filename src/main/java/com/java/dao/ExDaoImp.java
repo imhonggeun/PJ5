@@ -30,4 +30,9 @@ public class ExDaoImp implements ExDao{
 			return exMapper.edit(exDTO);
 		}
 
+		@Override
+		public int exinput(ExDTO exDTO) {
+			return exMapper.exinput(exDTO);
+		}
+
 }

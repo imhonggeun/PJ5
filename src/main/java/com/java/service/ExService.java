@@ -12,4 +12,6 @@ public interface ExService {
 
 	String edit(HttpServletRequest req);
 
+	String exinput(HttpServletRequest req);
+
 }

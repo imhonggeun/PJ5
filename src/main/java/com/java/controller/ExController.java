@@ -29,5 +29,13 @@ public class ExController {
 	public String exdetail(HttpServletRequest req) {
 		return exService.edit(req);
 	}
+	@GetMapping("/exinput")
+	public String add() {
+		return "exinput";
+	}
+	@PostMapping("/exinput")
+	public String exinput(HttpServletRequest req) {
+		return exService.exinput(req);
+	}
 
 }

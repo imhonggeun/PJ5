@@ -42,6 +42,15 @@ public class ExServiceImp implements ExService{
 			exDao.edit(exDTO);
 			return "redirect:/";
 		}
+
+		@Override
+		public String exinput(HttpServletRequest req) {
+			String title = req.getParameter("title");
+			String content = req.getParameter("content");
+			ExDTO exDTO = ExDTO.builder().title(title).content(content).build();
+			exDao.exinput(exDTO);
+			return "redirect:/";
+		}
 		
 
 }

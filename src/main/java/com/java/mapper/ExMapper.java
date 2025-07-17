@@ -2,6 +2,7 @@ package com.java.mapper;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
@@ -19,5 +20,8 @@ public interface ExMapper {
 	
 	@Update("UPDATE test SET title=#{title},content=#{content} where NO=#{no}")
 	int edit(ExDTO exDTO);
+
+	@Insert("Insert into test (title,content) values (#{title},#{content})")
+	int exinput(ExDTO exDTO);
 
 }
